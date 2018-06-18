@@ -1,0 +1,162 @@
+body
+{
+	position: relative;
+    margin: 0;
+    top: -15px;
+}
+.frame
+{
+    width: 1889px;
+    height: 906px;
+    background-color: #5b5b5b;
+}
+header
+{
+    width: 1420px;
+    height: 136px;
+    background-color: #909090;
+    left: 235px;
+    top: 15px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #010101;
+    position: absolute;
+}
+.day_of_the_42
+{
+    height: 110px;
+    width: 426px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.loupe
+{
+    position: absolute;
+    top: 10px;
+    left: 1134px;
+}
+.reload
+{
+	position: absolute;
+    width: 19px;
+    height: 20px;
+    left: 1390px;
+    top: 10px;
+}
+.close
+{
+	position: absolute;
+    width: 19px;
+    height: 20px;
+    left: 1390px;
+    top: 107px;
+}
+.left-block
+{
+    position: absolute;
+    left: 264px;
+    top: 172px;
+    width: 141px;
+    height: 425px;
+    background-color: #909090;
+    border-radius: 11px;
+    box-shadow: 10px 10px 5px #010101;
+}
+.arrow
+{
+    position: absolute;
+    left: 33px;
+    top: 15px;
+    width: 70px;
+    height: 70px;
+}
+.main
+{
+    position: absolute;
+    left: 33px;
+    top: 95px;
+    width: 70px;
+    height: 70px;
+}
+.oeil
+{
+    position: absolute;
+    left: 33px;
+    top: 175px;
+    width: 70px;
+    height: 65px;
+}
+.outil
+{
+    position: absolute;
+    left: 33px;
+    top: 250px;
+    width: 70px;
+    height: 70px;
+}
+.chat-icon
+{
+	position: absolute;
+    left: 33px;
+    top: 330px;
+    width: 70px;
+    height: 68px;
+}
+.center-block
+{	
+    position: absolute;
+    left: 435px;
+    top: 172px;
+    width: 1020px;
+    height: 582px;
+    background-color: #909090;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #010101;
+}
+.cluster
+{
+    position: absolute;
+    width: 1000px;
+    height: 563px;
+    top: 10px;
+    left: 10px;
+    background-color: #909090;
+}
+.right-block
+{
+    position: absolute;
+    left: 1485px;
+    top: 172px;
+    width: 140px;
+    height: 425px;
+    background-color: #909090;
+    border-radius: 12px;
+    box-shadow: 10px 9px 5px #010101;
+}
+.book
+{
+    position: absolute;
+    width: 70px;
+    height: 96px;
+    top: 15px;
+    left: 35px;
+}
+.towel
+{
+    position: absolute;
+    width: 72px;
+    height: 52px;
+    top: 121px;
+    left: 34px;
+}
+
+div.bricks
+{
+    position: absolute;
+    left: 10px;
+    top: 178px;
+    width: 120px;
+    height: 70px;
+    background-image: url(resources/brick.jpg);
+    background-repeat: repeat;
+}
