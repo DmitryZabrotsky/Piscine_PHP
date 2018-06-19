@@ -8,25 +8,40 @@
 <body>
 	<div class="frame">
 		<header>
-			<img class="day_of_the_42" src="resources/day_of_the_42.png" alt="">
+			<img class="day_of_the_42" src="resources/day_of_the_42.png" alt="day_of_the_42" title="day_of_the_42">
 			<img class="loupe" src="resources/loupe.png" alt="">
-			<img class="reload" src="resources/reload.png" alt="">
-			<img class="close" src="resources/close.gif" alt="">
+			<a href="http://www.disney.com" title="Start from the beginning">
+				<img class="reload" src="resources/reload.png" alt="Start from the beginning" title="Start from the beginning">
+			</a>
+			<a href="http://www.relaischateaux.com" title="Disconnect">
+				<img class="close" src="resources/close.gif" alt="">
+			</a>
 		</header>
 		<div class="left-block">
-			<img class="arrow" src="resources/arrow.png" alt="">
-			<img class="main" src="resources/main.png" alt="">
-			<img class="oeil" src="resources/oeil.png" alt="">
-			<img class="outil" src="resources/outil.png" alt="">
-			<img class="chat-icon" src="resources/chat-icon.png" alt="">
+			<img class="arrow" src="resources/arrow.png" alt="Advance" title="Advance">
+			<img class="main" src="resources/main.png" alt="Take" title="Take">
+			<img class="oeil" src="resources/oeil.png" alt="Look" title="Look">
+			<img class="outil" src="resources/outil.png" alt="Use" title="Use">
+			<img class="chat-icon" src="resources/chat-icon.png" alt="Speak" title="Speak">
 		</div>
 		<div class="center-block">
-			<img class="cluster" src="resources/cluster.jpg" alt="">
+			<img class="cluster" src="resources/cluster.jpg" alt="Cluster" title="Cluster" usemap="#center-map">
+			<map name="center-map">
+				<area target="" alt="IKEA" title="IKEA" href="http://www.ikea.com" coords="470,1500,300,300" shape="rect">
+				<area target="" alt="APPLE" title="APPLE" href="http://www.apple.com" coords="1300,300,780,500" shape="rect">
+			</map>
 		</div>
 		<div class="right-block">
-			<img class="book" src="resources/book.png" alt="">
-			<img class="towel" src="resources/towel.png" alt="">
-			<div class="bricks"></div>
+			<img class="book" src="resources/book.png" alt="Book" title="Book">
+			<img class="towel" src="resources/towel.png" alt="Towel" title="Towel">
+			<div class="bricks" title="Wall"></div>
+		</div>
+		<div class="green-block green-block-shadow">
+			<p>Vous <span id="strong_text">entrez</span> alors dans une grande piece remplie<br />d'<span id="shadow_text">ordinateurs</span>...<br />
+			<i id="italic_text">- Bonjour, vous &ecirc;tes nouveau ici ?</i></p>
+			<input type="text" name="reply" />
+			<button>Repondre</button>
+		</div>
 		</div>
 	</div>
 </body>
