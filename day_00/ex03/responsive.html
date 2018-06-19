@@ -3,80 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mendeleïev periodic table</title>
+	<link rel="stylesheet" type="text/css" href="responsive.css">
 </head>
-<style>
-	.photodiv {
-			width: 100%;
-			height: 20%;
-	}
-	.photo {
-			display: block;
-			width: 40%;
-			height: 20%;
-			margin: 0 auto;
-	}
-	table {
-			width: 100%;
-	}
-	tr td {
-			border: 1px solid black;
-			border-collapse: collapse;
-	}
-	.red {
-			background-color: #d41e1e;	 
-	}
-	.orange {
-			background-color: #f48733;
-	}
-	.yellow {
-			background-color: #f8e025;
-	}
-	.green {
-			background-color: #5aa658;
-	}
-	.lightblue {
-			background-color: #77b9b0;
-	}
-	.blue {
-			background-color: #58a4da;
-	}
-	.magenta {
-			background-color: #8583ae;
-	}
-	.boldmagenta {
-			background-color: #766399;
-	}
-	.lgreen {
-			background-color: #bbd180;
-	}
-	.llgreen {
-			background-color: #78b170;
-	}
-	.weight, .num, .elem {
-			display: inline-block;
-			width: 100%;
-			height: 100%;
-	}
-	.weight {
-			font-size: 0.7vw;
-			text-align: right;
-			font-weight: small;
-	}
-	.num {
-			font-size: 0.7vw;
-			text-align: left;
-			font-weight: 100;
-	}
-	.elem {
-			font-size: 1vw;
-			text-align: center;
-			font-weight: bold;
-	}
-	.invis {
-			background-color: white;
-			border: none;
-	}
-</style>
 <body>
 	<div>
 		<img class="photo" src="http://www.google.com/logos/doodles/2016/dmitri-mendeleevs-182nd-birthday-5692309846884352-hp2x.jpg" alt="dmitri mendeleev photo">
@@ -726,7 +654,7 @@
 				<div class="num">118</div>
 			</td>
 		</tr>
-		<tr style="height: 1em"></tr>
+		<tr class="empty-tr"></tr>
 		<tr class="lgreen">
 			<td class="el invis">
 				<div class="weight"></div>
