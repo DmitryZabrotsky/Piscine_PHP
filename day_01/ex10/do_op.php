@@ -2,7 +2,7 @@
 <?php
 
 	if ($argc != 4) {
-		echo "Incorrect Parametrs";
+		echo "Incorrect Parametrs\n";
 		exit(1);
 	}
 

@@ -10,10 +10,13 @@
 	foreach ($sliced_arr as $value) {
 		array_push($res_arr, $value." ");
 	}
+	var_dump($res_arr);
 	$i = count($res_arr);
 	$res_arr[$i - 1] = trim($res_arr[$i - 1]);
 	foreach ($res_arr as $value) {
-		echo $value;
+		if ($value != " ") {
+			echo $value;
+		}
 	}
 	echo "\n";
 ?>

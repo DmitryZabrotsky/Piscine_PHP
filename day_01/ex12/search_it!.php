@@ -14,5 +14,6 @@
 				$res = ($exploaded_arg[2]);
 		}
 	}
-	echo $res."\n";
+	if ($res)
+		echo $res."\n";
 ?>
