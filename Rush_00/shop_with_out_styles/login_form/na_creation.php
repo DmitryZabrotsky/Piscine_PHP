@@ -6,7 +6,7 @@
 	}
 	$cont = file_get_contents('../shopdb.csv');
 	if (!$cont) {
-		header('Location: ../setup.html');
+		header('Location: ../intro.html');
 	}
 	$cont = explode(';', $cont);
 

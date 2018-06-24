@@ -9,8 +9,6 @@
 <head>
 	<meta name="description" content="Medieval shop">
 	<title>Medieval shop</title>
-	<!-- <link rel="stylesheet" href="css/modal.css">
-	<link rel="stylesheet" href="css/style.css"> -->
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 	<link rel="stylesheet" type="text/css" href="styles/goods.css">
 </head>
@@ -36,8 +34,8 @@
 					<div class="item-title"><h1><?php echo $product['title'];?></h1></div>
 					<div class="item-intro"><h4><?php echo $product['intro'];?></h4></div>
 					<div class="item-buttons">
-						<a href="bascket.php?item=<?php echo $product['id']; ?>"><button class="button-buy-item">BUY</button></a>
-						<a href="bascket.php?additem=<?php echo $product['id']; ?>"><button class="button-add-to-cart">Add to cart</button></a>
+						<a href="basket.php?item=<?php echo $product['id']; ?>"><button class="button-buy-item">BUY</button></a>
+						<a href="basket.php?additem=<?php echo $product['id']; ?>"><button class="button-add-to-cart">Add to cart</button></a>
 					</div>
 				</div>
 			</div>

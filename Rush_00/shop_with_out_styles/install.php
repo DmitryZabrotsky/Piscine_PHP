@@ -70,7 +70,7 @@
 	$sql = "INSERT INTO products (id, title, img, intro, price, category, stats)
 			VALUES (1, 'Body armor', 'https://i.pinimg.com/originals/ff/a8/1f/ffa81f6503b8249ec570d4d5fc3518ea.png', 'Will defence you through evaluations', '1024', 'Armor', 'Defence + 64'),
 			(2, 'Resurection scroll', 'http://static.ncsoft.com/lineage2/store/lucky/2012_Nov/blessedscrollofresurrection.png', 'Сan resurrect any project', '4096', 'Scrolls', 'Sustain + 999'),
-			(3, 'Long sword', 'http://www.buyingasword.com/images/Product/large/AH-6972.png', 'Can destroy any error', '2048', 'Weapons', 'Damege + 128'),
+			(3, 'Long sword', 'http://www.buyingasword.com/images/Product/large/AH-6972.png', 'Can destroy any error', '2048', 'Weapons', 'Damage + 128'),
 			(4, 'Teleportation scroll', 'http://static.ncsoft.com/lineage2/store/lucky/2012_Nov/blessedscrollofescape.png', 'Can teleports anywhere, even at that time \"when everything worked\"', '528', 'Scrolls', 'Just need everyone!'),
 			(5, 'Crossbow', 'https://www.medievalarchery.com/images/Category/medium/897.png', 'Can shoot any memory leak', '2048', 'Weapons', 'Range 1900'),
 			(6, 'Helmet', 'https://s3-eu-west-1.amazonaws.com/mordhau-media/spirit/images/1394/8d53423564e10992410d988929106832.png', 'Gives expert knowledge of any programming language', '20', 'Armor', 'Weight 32'),

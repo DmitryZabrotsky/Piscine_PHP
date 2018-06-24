@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Change password!</title>
-		<!-- <link rel="stylesheet" href="../css/plainw.css"> -->
+		<title>Change password form</title>
+		<link rel="stylesheet" href="../styles/chngpasswd.css">
 	</head>
 
 	<body>
 		<form action="chn_ps.php" method="post">
-			<div id="form-header">CHANGE PASSWORD<a href="../index.php" class="close">&times;</a></div>
+			<div class="page-title">
+				Change YOUR PASSWORD below:
+			</div>
 			<?php
-				if ($_GET['loginErr']) {
-					echo "<div class=\"errvis\">Worng info!</div>";
+				if ($_GET['error']) {
+					echo "<div class=\"error-msg-on\">Wrong info!</div>";
 				}
 				else {
-					echo "<div class=\"errhide\">Worng info!</div>";
+					echo "<div class=\"error-msg-off\">Wrong info!</div>";
 				}
 			?>
-			<input type="text" name="login" value="" placeholder="Username" /><br />
-			<input type="password" name="oldpasswd" value="" placeholder="Old Password" /><br />
-			<input type="password" name="passwd" value="" placeholder="New Password" /><br />
-			<input type="password" name="newpasswd" value="" placeholder="Type New Password again" /><br />
-			<input id="butt" type="submit" name="submit" value="OK" />
+			<span class="input-header">Login:</span> 
+			<br/>
+			<input class="input-field" type="text" name="login" value="" placeholder="username" />
+			<br/>
+			<span class="input-header">OLD password:</span> 
+			<br/>
+			<input class="input-field" type="password" name="oldpasswd" value="" placeholder="old Password" />
+			<br/>
+			<span class="input-header">NEW password:</span> 
+			<br/>
+			<input class="input-field" type="password" name="passwd" value="" placeholder="new password" />
+			<br/>
+			<span class="input-header">Repeat NEW password:</span> 
+			<br/>
+			<input class="input-field" type="password" name="newpasswd" value="" placeholder="repeat new password" />
+			<br/>
+			<input class="input-field-ok submit-button" id="butt" type="submit" name="submit" value="OK" />
+			<a class="input-field-ok cancel-button" href="../index.php" class="button-close">CANCEL</a>
 		</form>
 	</body>
 </html>

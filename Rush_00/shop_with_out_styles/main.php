@@ -3,7 +3,7 @@
 	// Берём данные о БД из shopdb.csv
 	$cont = file_get_contents('shopdb.csv');
 	if (!$cont) {
-		header('Location: setup.php?msqlogin=root&msqpasswd=rotten');
+		header('Location: intro.php?msqlogin=root&msqpasswd=rotten');
 	}
 	// $cont = explode('\n', $cont);
 	// $cont = explode(';', $cont[0]);
@@ -60,7 +60,7 @@
 		mysqli_free_result($result);
 	}
 	session_start();
-	if (!$_SESSION['cart']) {
-		$_SESSION['cart'] = array();
+	if (!$_SESSION['basket']) {
+		$_SESSION['basket'] = array();
 	}
 ?>

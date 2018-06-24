@@ -26,6 +26,11 @@ body {
 	font-weight: bold;
 }
 
+.header-login-value > a {
+    text-decoration: none;
+    color: orange;
+}
+
 .header-btn {
 	vertical-align: middle;
 	cursor: pointer;
@@ -35,7 +40,6 @@ body {
 	border: 1px solid black;
 }
 
-/*cart*/
 .basket-btn {
 	margin-left: 1%;
 	margin-right: 2%;

@@ -1,6 +1,6 @@
 <?php
 	if ($_POST["login"] == FALSE || $_POST["oldpasswd"] == FALSE || $_POST["passwd"] == FALSE || $_POST["newpasswd"] == FALSE || $_POST["newpasswd"] != $_POST["passwd"] || $_POST["submit"] != 'OK') {
-		header('Location: change_pass.php?chaErr=1');
+		header('Location: change_pass.php?error=1');
 		exit("ERROR\n");
 	}
 
@@ -12,7 +12,7 @@
 	if (auth($login, $password) === TRUE) {
 		$cont = file_get_contents('../shopdb.csv');
 		if (!$cont) {
-			header('Location: ../setup.html');
+			header('Location: ../intro.html');
 		}
 		$cont = explode(';', $cont);
 		$conn = mysqli_connect("localhost", $cont[0], $cont[1], $cont[2]);
@@ -23,7 +23,7 @@
 		}
 		else {
 			mysqli_close($conn);
-			header('Location: login.php');
+			header('Location: ../index.php');
 			exit("OK\n");
 		}
 	}

@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login</title>
-<!-- 		<link rel="stylesheet" href="../css/plainw.css"> -->
+		<title>Sign in form</title>
+		<link rel="stylesheet" href="../styles/login.css">
 	</head>
 
 	<body>
-		<form action="lg_in.php" method="post">
-			<div id="form-header" style="margin-bottom: 1.5vh;">USER LOGIN<a href="../index.php" class="close">&times;</a></div>
-				<div class="middle_text">
-					<a href="create.php">CREATE new account</a><br/>
-						or <br/>
-					<a href="change_pass.php">CHANGE password an existing account</a>
-				</div>
+
+	<div class="page-title">
+		<div class="user-login-text">
+			USER login form
+		</div>
+	</div>
+
+		<form action="lg_in.php" method="POST">
+		
 			<?php
+		
 				if ($_GET['loginErr'] == 1)
-					echo "<div class=\"errvis\">Check the input fields!</div>";
+					echo "<div class=\"error-msg-on\">Check the input fields!</div>";
 				else
-					echo "<div class=\"errhide\">Check the input fields!</div>";
+					echo "<div class=\"error-msg-off\">Check the input fields!</div>";
+		
 			?>
-			<input type="text" name="login" value="<?php echo $_GET['login']; ?>" placeholder="Username" /><br/>
-			<input type="password" name="passwd" value="" placeholder="Password" /><br/>
-			<input id="butt" type="submit" name="submit" value="OK" />
+			<span class="input-header">Login:</span> 
+			<br/>
+			<input class="input-field" type="text" name="login" value="<?php echo $_GET['login']; ?>" placeholder="Username" />
+			<br/>
+			<span class="input-header">Password:</span> 
+			<br/>
+			<input class="input-field" type="password" name="passwd" value="" placeholder="Password" />
+			<br/>
+			<input class="input-field-ok submit-button" class="input-field" id="butt" type="submit" name="submit" value="OK" />
+			<a class="input-field-ok cancel-button" href="../index.php" class="close">cancel</a>
 		</form>
+
+		<div class="create-new-user-button">
+			<a href="create.php">create NEW account</a><br/>
+		</div>
+
 	</body>
 </html>
