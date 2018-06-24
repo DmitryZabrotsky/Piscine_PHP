@@ -1,4 +1,5 @@
 <?php
+	$is_basket = TRUE;
 	// Берём данные о БД из shopdb.csv
 	$cont = file_get_contents('shopdb.csv');
 	if (!$cont) {
@@ -31,7 +32,7 @@
 
 	//Наполняем массив продуктов и привязывем к категориям
 	$products = array();
-	
+
 	if ($cat = isset($_REQUEST['cat'])) {
 		$cat = (int) $_REQUEST['cat'];
 	}

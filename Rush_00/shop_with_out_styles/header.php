@@ -1,4 +1,5 @@
 <div class="header-login-bar">
+
 	<?php
 
 		$login_status_flag = TRUE;
@@ -31,11 +32,42 @@
 	<a href="bascket.php"><button class="basket-btn"><img class="basket-img" src="https://cdn1.vectorstock.com/i/thumb-large/62/70/shopping-cart-icon-in-black-dotted-silhouette-vector-18566270.jpg"></button></a>
 </div>
 
+		<?php
+
+			if ($is_basket === TRUE) { 
+		
+		?>
+
+			<div>
+				<img class="pre-navigation-img" src="images/journey.png">
+			</div>
+
+		<?php 
+
+			}
+
+		?>
+
 <div class="navigation-menu">
-	<a href="index.php"><span>MEDIEVAL SHOP ⚔️</span></a>
+
+		<?php
+
+			if ($is_basket === TRUE) { 
+		
+		?>
+
+		<a  class="menu-item" href="index.php"><span>All</span></a>
+
+		<?php
+
+			}
+		
+		?>
+
 	<?php
 		foreach($categories as $category) {
 			echo ' <a class="menu-item" href="?cat=' . $category['id'] . '"> <span class="tab">' . $category['title'] . '</span></a>';
 		}
 	?>
 </div>
+<div class="afterline-navigation-menu"></div>

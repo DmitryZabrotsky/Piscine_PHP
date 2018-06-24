@@ -1,4 +1,9 @@
-<?php include('main.php'); ?>
+<?php 
+
+	include('main.php'); 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,35 +12,57 @@
 	<!-- <link rel="stylesheet" href="css/modal.css">
 	<link rel="stylesheet" href="css/style.css"> -->
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" type="text/css" href="styles/goods.css">
 </head>
 <body>
-	<?php include('header.php'); ?>
 
-	<?php if (!$_GET) {
-		echo '<div style="background-image: url(http://www.zbrushcentral.com/attachment.php?attachmentid=522618);" class="coverimg"></div>';
-	}?>
+<?php
 
-	<div class="content">
-		<div class="products-row">
-			<?php foreach($products as $product) {?>
-				<div class="product-card">
-					<div class="product-thumbnail">
-						<div class="product-stats"><h4><?php echo $product['stats'];?></h4></div>
-						<img src="<?php echo $product['img'];?>" alt="">
-						<div class="caption">
-							<div class="product-price"><h2>&dollar;<?php echo $product['price'];?></h2></div>
-							<div class="product-title"><h1><?php echo $product['title'];?></h1></div>
-							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
-							<div class="button">
-							<a href="bascket.php?item=<?php echo $product['id']; ?>"><button class="buy">BUY</button></a>
-							<a href="bascket.php?additem=<?php echo $product['id']; ?>"><button class="buy">Add to cart</button></a>
-							</div>
-						</div>
+	include('header.php');
+
+?>
+
+<div class="goods-grid">
+	<?php 
+	
+		foreach($products as $product) {
+	
+	?>
+			<div class="item">
+				<div class="item-stats"><h4><?php echo $product['stats'];?></h4></div>
+				<img clas="item-img" src="<?php echo $product['img'];?>" alt="item-img">
+				<div class="caption">
+					<div class="item-price"><h2>&dollar;<?php echo $product['price'];?></h2></div>
+					<div class="item-title"><h1><?php echo $product['title'];?></h1></div>
+					<div class="item-intro"><h4><?php echo $product['intro'];?></h4></div>
+					<div class="item-buttons">
+						<a href="bascket.php?item=<?php echo $product['id']; ?>"><button class="button-buy-item">BUY</button></a>
+						<a href="bascket.php?additem=<?php echo $product['id']; ?>"><button class="button-add-to-cart">Add to cart</button></a>
 					</div>
 				</div>
-			<?php } ?>
-		</div>
-	</div>
+			</div>
 
+	<?php 
+
+		}
+
+	?>
+
+</div>
+
+<div class="footer">
+	<span class="made-by"><span style="color: black">Made by</span> ft_minishop rush duo: </span>
+	<span>
+		<a target="_blank" href="https://github.com/DmitryZabrotsky">dzabots
+			<img class="gh" src="https://image.flaticon.com/icons/svg/25/25231.svg">
+		</a>
+	</span>
+	<span style="color: black">and</span>
+	<span>
+		<a target="_blank" href="https://github.com/ssupremus">ysushkov
+			<img class="gh" src="https://image.flaticon.com/icons/svg/25/25231.svg">
+		</a>
+	</span>
+</div>
 </body>
 </html>

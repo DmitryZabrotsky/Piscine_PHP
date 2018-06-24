@@ -1,6 +1,7 @@
 <?php
 	include('main.php');
 	$categories = FALSE;
+	$is_basket = FALSE;
 	session_start();
 	if ($_GET['additem']) {
 		$_GET['item'] = $_GET['additem'];
@@ -24,8 +25,7 @@
 <html>
 	<head>
 		<title>Cart</title>
-<!-- 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/cart.css"> -->
+
 	</head>
 	<body>
 		<?php include('header.php'); ?>
