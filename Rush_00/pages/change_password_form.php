@@ -6,12 +6,12 @@
 	</head>
 
 	<body>
-		<form action="chn_ps.php" method="post">
+		<form action="change_password_script.php" method="post">
 			<div class="page-title">
 				Change YOUR PASSWORD below:
 			</div>
 			<?php
-				if ($_GET['error']) {
+				if ($_GET['error'] or $_GET['loginErr']) {
 					echo "<div class=\"error-msg-on\">Wrong info!</div>";
 				}
 				else {
@@ -24,7 +24,7 @@
 			<br/>
 			<span class="input-header">OLD password:</span> 
 			<br/>
-			<input class="input-field" type="password" name="oldpasswd" value="" placeholder="old Password" />
+			<input class="input-field" type="password" name="oldpasswd" value="" placeholder="old password" />
 			<br/>
 			<span class="input-header">NEW password:</span> 
 			<br/>

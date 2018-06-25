@@ -6,7 +6,7 @@
 	</head>
 
 	<body>
-		<form action="na_creation.php" method="post">
+		<form action="accounts_maker.php" method="post">
 			<div class="page-title">
 				Fill account informtion
 			</div>

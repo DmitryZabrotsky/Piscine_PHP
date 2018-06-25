@@ -13,16 +13,19 @@
 		</div>
 	</div>
 
-		<form action="lg_in.php" method="POST">
+		<form action="login_script.php" method="POST">
 		
 			<?php
 		
-				if ($_GET['loginErr'] == 1)
-					echo "<div class=\"error-msg-on\">Check the input fields!</div>";
-				else
-					echo "<div class=\"error-msg-off\">Check the input fields!</div>";
+				if ($_GET['loginErr'] == 1) {
+					echo "<div class=\"error-msg-on\">Incorrect login informatin! Check the login field or password.</div>";
+				}
+				else {
+					echo "<div class=\"error-msg-off\">Incorrect login informatin! Check the login field or password.</div>";
+				}
 		
 			?>
+			
 			<span class="input-header">Login:</span> 
 			<br/>
 			<input class="input-field" type="text" name="login" value="<?php echo $_GET['login']; ?>" placeholder="Username" />
@@ -36,7 +39,7 @@
 		</form>
 
 		<div class="create-new-user-button">
-			<a href="create.php">create NEW account</a><br/>
+			<a href="create_user_page.php">create NEW account</a><br/>
 		</div>
 
 	</body>

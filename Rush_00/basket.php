@@ -67,7 +67,7 @@ You can return to the main page of the store and make purchases by clicking this
 
 			<?php
 
-				$super_total = 0;
+				$final_price = 0;
 				foreach($_SESSION['basket'] as $key => $value) {
 					$quantity = $_SESSION['basket'][$key]['quantity'];
 					$title = $products[$key]['title'];
@@ -104,7 +104,7 @@ You can return to the main page of the store and make purchases by clicking this
 								<input class="bascet-button" type='submit' name="<?php echo $key; ?>up" value='+' field='quantity' />
 							</form>
 						</td>
-						<td><?php echo $total_price; ?></td>
+						<td><?php echo $total_price."$"; ?></td>
 						<td>
 							<form method='get' action='basket.php'>
 								<input class="bascet-button" type='submit' name="<?php echo $key; ?>discard" value='discard' />
@@ -113,7 +113,7 @@ You can return to the main page of the store and make purchases by clicking this
 					</tr>
 			<?php
 
-					$super_total += $total_price;
+					$final_price += $total_price;
 				}
 			
 			?>
@@ -121,7 +121,7 @@ You can return to the main page of the store and make purchases by clicking this
 						<td></td>
 						<td></td>
 						<td class="total-price">TOTAL:</td>
-						<td class="total-price"><?php echo $super_total; ?></td>
+						<td class="total-price"><?php echo $final_price."$"; ?></td>
 						<td></td>
 					</tr>
 				</table>
@@ -129,11 +129,14 @@ You can return to the main page of the store and make purchases by clicking this
 			<?php
 
 				if ($_SESSION['loggued_on_user'] != "") {
-					echo '<div class="validate-block"><a href="archive_bascket.php"><button class="validate-button">VALIDATE GOODS</button></a></div>';
+					echo '<div class="validate-block"><a href="invoice.php"><button class="validate-button">VALIDATE GOODS</button></a></div>';
+					echo '<br/>';
+					echo '<br/>';
+					echo '<center>After press button "Validate goods", we will send you an email with your invoice.</center>';
 					echo '<div class="validate-block"><a class="back-to-main"href="index.php">Back to main</a></div>';
 				}
 				else {
-					echo '<p class="validate-block">Dear customer, please<a class="sign-in-for-validate" href="login_form/login.php"> SIGN IN </a> to validate your basket.</p>';
+					echo '<p class="validate-block">Dear customer, please<a class="sign-in-for-validate" href="pages/login.php"> SIGN IN </a> to validate your basket.</p>';
 				}
 
 			?>

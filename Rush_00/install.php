@@ -1,42 +1,34 @@
 <?php
-	if ($_POST["msqlogin"] == FALSE || $_POST["msqpasswd"] == FALSE || $_POST["dbname"] == FALSE  || $_POST["submit"] != "OK") {
+	if ($_POST["msqlogin"] == FALSE or $_POST["msqpasswd"] == FALSE or$_POST["dbname"] == FALSE  or $_POST["submit"] != "OK") {
 		exit("BAD INPUT\n");
 	}
-	// echo "Connection died(maybe you have already created a new database?)".PHP_EOL;
+
 	$servername = "localhost";
 	$username = $_POST['msqlogin'];
-	$password = $_POST['msqpasswd']; //Пароль mysql, который ты задавал при установке МАМПА
+	$password = $_POST['msqpasswd'];
 	$dbname = $_POST['dbname'];
 
-	// Create connection
 	$conn = mysqli_connect($servername, $username, $password);
 
-	// Check connection
 	if (!$conn) {
 		die("Connection failed: " . mysqli_connect_error());
 	}
 
-	// Удаляем старую БД
-	unlink('shopdb.csv');
+	unlink('access_db_info.csv');
 	$sql = "DROP DATABASE IF EXISTS $dbname";
 	mysqli_query($conn, $sql);
-	// if (!mysqli_query($conn, $sql)) {
-	// 	die("Error dropping db: " . mysqli_error($conn));
-	// }
-	// Создаем БД
+
 	$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 	if (!mysqli_query($conn, $sql)) {
 		die("Error creating database: " . mysqli_error($conn));
 	}
 	mysqli_close($conn);
 	
-	//Подключаемся к БД
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 	if (!$conn) {
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	// Создаем таблицу категории
 	$sql = "CREATE TABLE IF NOT EXISTS categories (
 			id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
 			title VARCHAR(255) NOT NULL
@@ -45,14 +37,12 @@
 		die("Error creating categories: " . mysqli_error($conn));
 	}
 
-	// Наполняем таблицу категорий
 	$sql = "INSERT INTO categories (id, title)
 			VALUES (1, 'Armor'), (2, 'Scrolls'), (3, 'Weapons')";
 	if (!mysqli_query($conn, $sql)) {
 		die("Error filling categories: " . mysqli_error($conn));
 	}
 
-	// Создаем таблицу продуктов
 	$sql = "CREATE TABLE IF NOT EXISTS products (
 			id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
 			title VARCHAR(255) NOT NULL,
@@ -66,7 +56,6 @@
 		die("Error creating products: " . mysqli_error($conn));
 	}
 
-	// Наполняем таблицу продуктов
 	$sql = "INSERT INTO products (id, title, img, intro, price, category, stats)
 			VALUES (1, 'Body armor', 'https://i.pinimg.com/originals/ff/a8/1f/ffa81f6503b8249ec570d4d5fc3518ea.png', 'Will defence you through evaluations', '1024', 'Armor', 'Defence + 64'),
 			(2, 'Resurection scroll', 'http://static.ncsoft.com/lineage2/store/lucky/2012_Nov/blessedscrollofresurrection.png', 'Сan resurrect any project', '4096', 'Scrolls', 'Sustain + 999'),
@@ -80,8 +69,7 @@
 	if (!mysqli_query($conn, $sql)) {
 		die("Error filling products: " . mysqli_error($conn));
 	}
-	// Создаем таблицу категорий продуктов для связи и заполняем ее в формате:
-	// (id категории, id товара)
+
 	$sql = "CREATE TABLE IF NOT EXISTS categories_products (
 			id_category INT(11) NOT NULL, 
 			id_product INT(11) NOT NULL,
@@ -96,7 +84,6 @@
 		die("Error filling categories: " . mysqli_error($conn));
 	}
 
-	// Создаем таблицу заказов
 	$sql = "CREATE TABLE IF NOT EXISTS orders (
 		id_ord INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
 		username VARCHAR(255) NOT NULL,
@@ -107,7 +94,6 @@
 		die("Error creating order: " . mysqli_error($conn));
 	}
 
-	// Создаем таблицу юзеров и добавляем админа
 	$sql = "CREATE TABLE IF NOT EXISTS users (
 			id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
 			username VARCHAR(255) NOT NULL,
@@ -126,7 +112,7 @@
 		die("Error filling users: " . mysqli_error($conn));
 	}
 
-	file_put_contents('shopdb.csv', "$username;$password;$dbname");
+	file_put_contents('access_db_info.csv', "$username;$password;$dbname");
 	mysqli_close($conn);
 	session_start();
 	foreach ($_SESSION as $key => $value) {
