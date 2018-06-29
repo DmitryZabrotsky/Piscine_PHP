@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>balloon</title>
+</head>
+<body>
+	
+	<div class="balloon" id="target" onclick="color_on_click()" onmouseleave="color_on_leave()" style="width: 200px; height: 200px; margin:0 auto; background-color: red; -moz-border-radius: 100px; -border-radius: 100px; border-radius: 100px;"></div>
+
+	<script type="text/javascript">
+		function color_on_click() {
+			var color;
+			color = document.getElementById("target").style.backgroundColor;
+			switch (color) {
+				case 'red':
+					document.getElementById("target").style.backgroundColor = 'green';
+					break ;
+				case 'green':
+					document.getElementById("target").style.backgroundColor = 'blue';
+					break;
+				case 'blue':
+					document.getElementById("target").style.backgroundColor = 'red';
+					break;
+			}
+			var targetwidth = parseInt(document.getElementById("target").style.width);
+			if (targetwidth >= 420) {
+				document.getElementById("target").style.width = '200px';
+				document.getElementById("target").style.height = '200px';
+			} else {
+				document.getElementById("target").style.width = targetwidth + 10 + 'px';
+				document.getElementById("target").style.height = targetwidth + 10 + 'px';
+				document.getElementById("target").style.borderRadius = targetwidth + 10 + 'px';
+			}
+		};
+		function color_on_leave() {
+			var color;
+			color = document.getElementById("target").style.backgroundColor;
+			switch (color) {
+				case 'red':
+					document.getElementById("target").style.backgroundColor = 'blue';
+					break ;
+				case 'green':
+					document.getElementById("target").style.backgroundColor = 'red';
+					break;
+				case 'blue':
+					document.getElementById("target").style.backgroundColor = 'green';
+					break;
+			}
+			var targetwidth = parseInt(document.getElementById("target").style.width);
+			if (targetwidth == 200) {
+				return ;
+			} else {
+				document.getElementById("target").style.width = targetwidth - 5 + 'px';
+				document.getElementById("target").style.height = targetwidth - 5 + 'px';
+				document.getElementById("target").style.borderRadius = targetwidth - 2.5 + 'px';
+			}
+		};
+	</script>
+
+</body>
+</html>
