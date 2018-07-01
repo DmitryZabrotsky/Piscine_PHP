@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calc</title>
+</head>
+<body>
+
+	<input type="text" id="a">
+	<select id="operation">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+		<option value="%">%</option>
+	</select>
+	<input type="text" id="b">
+	<input type="submit" value="Try me!" onclick="calculate()">
+	
+	<script type="text/javascript">
+		function calculate() {
+			var a = parseInt(document.getElementById('a').value);
+			var b = parseInt(document.getElementById('b').value);
+			var operation = document.getElementById('operation').value;
+			var res;
+			if (a < 0 || b < 0) {
+				alert('Error :(');
+				return ;
+			}
+			if ((operation == '/' || operation == '%') && (b == 0) {
+				alert('It`s over 9000!');
+			}
+			switch (operation) {
+				case '+':
+					res = a + b;
+					break ;
+				case '-':
+					res = a - b;
+					break ;
+				case '*':
+					res = a * b;
+					break ;
+				case '/':
+					res = a / b;
+					break ;
+				case '%':
+					res = a % b;
+					break ;
+			}
+			console.log(res);
+		}
+		setInterval(function(){ alert('Please, use me...'); }, 30000);
+	</script>
+
+</body>
+</html>
