@@ -22,12 +22,14 @@
 			var b = parseInt(document.getElementById('b').value);
 			var operation = document.getElementById('operation').value;
 			var res;
+			var error;
 			if (a < 0 || b < 0) {
 				alert('Error :(');
 				return ;
 			}
-			if ((operation == '/' || operation == '%') && (b == 0) {
+			if ((operation == '/' || operation == '%') && b == 0) {
 				alert('It`s over 9000!');
+				error = 1;
 			}
 			switch (operation) {
 				case '+':
@@ -45,6 +47,9 @@
 				case '%':
 					res = a % b;
 					break ;
+			}
+			if (!error) {
+				alert(res);
 			}
 			console.log(res);
 		}
