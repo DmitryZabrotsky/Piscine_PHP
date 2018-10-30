@@ -26,14 +26,10 @@
 		
 			?>
 			
-			<span class="input-header">Login:</span> 
-			<br/>
-			<input class="input-field" type="text" name="login" value="<?php echo $_GET['login']; ?>" placeholder="Username" />
-			<br/>
-			<span class="input-header">Password:</span> 
-			<br/>
-			<input class="input-field" type="password" name="passwd" value="" placeholder="Password" />
-			<br/>
+			<span class="input-header">Login:</span> <br/>
+			<input class="input-field" type="text" name="login" value="<?php echo $_GET['login']; ?>" placeholder="Username" /><br/>
+			<span class="input-header">Password:</span> <br/>
+			<input class="input-field" type="password" name="passwd" value="" placeholder="Password" /><br/>
 			<input class="input-field-ok submit-button" class="input-field" id="butt" type="submit" name="submit" value="OK" />
 			<a class="input-field-ok cancel-button" href="../index.php" class="close">cancel</a>
 		</form>

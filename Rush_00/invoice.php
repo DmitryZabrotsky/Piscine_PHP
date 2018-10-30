@@ -42,9 +42,9 @@
 		$message .= "<tr><td>" . $title . "</td><td>" . $price . "$</td><td>" . $quantity ."</td><td>" . ($price * $quantity) . "$</td></tr>";
 		$total = $total + ($price * $quantity);
 	}
-	$headers = "From: medieval@armor.io\r\n";
-	$headers .= "Reply-To: medieval@armor.io\r\n";
-	$headers .= "CC: medieval@armor.io\r\n";
+	$headers = "From: gaben@steam.com\r\n";
+	$headers .= "Reply-To: gaben@steam.com\r\n";
+	$headers .= "CC: gaben@steam.com\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 	$message .= "</table><h2>Total price: " . $total . "$</h2>";

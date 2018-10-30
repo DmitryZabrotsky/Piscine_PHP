@@ -4,23 +4,24 @@
 
 	$categories = FALSE;
 	$is_basket = FALSE;
-	session_start();
-	if ($_GET['additem']) {
+	// session_start();
+	$products = getGoods(0, 1000);
+	if (isset($_GET['additem'])) {
 		$_GET['item'] = $_GET['additem'];
 	}
-	if ($_GET['item']) {
+	if (isset($_GET['item'])) {
 		foreach ($products as $key => $value) {
 			if ($value['id'] == $_GET['item']) {
 				$_SESSION['basket'][$key] = array();
 				$_SESSION['basket'][$key]['id'] = $_GET['item'];
-				if (!($_SESSION['basket'][$key]['quantity']))
+				if (!isset($_SESSION['basket'][$key]['quantity']))
 					$_SESSION['basket'][$key]['quantity'] = 1;
 					unset($_GET['item']);
 				break ;
 			}
 		}
 	}
-	if ($_GET['additem']) {
+	if (isset($_GET['additem'])) {
 		header('Location: index.php?hey');
 	}
 ?>
@@ -44,12 +45,11 @@
 			<?php
 
 				foreach($_SESSION['basket'] as $key => $value) {
-					if ($_GET[$key . "discard"])
+					if (isset($_GET[$key . "discard"]))
 						unset($_SESSION['basket'][$key]);
 				}
 				if (count($_SESSION['basket']) == 0) {
-					echo '<h2 class="buy-something">To our regret, you did not like anything from our goods made with a soul and placed for purchase. 
-You can return to the main page of the store and make purchases by clicking this <a class="back-to-main"href="index.php">button</a></h2>';
+					echo '<h2 class="buy-something">Busket is EMPTY! Click on me for make purchases!<a class="back-to-main"href="index.php">button</a></h2>';
 					exit();
 				}
 
@@ -82,16 +82,16 @@ You can return to the main page of the store and make purchases by clicking this
 							<form id='myform' method='get' action='basket.php'>
 
 			<?php
-									if ($_GET[$key . 'quantity'] && ($_GET[$key . 'quantity'] != $_SESSION['basket'][$key]['quantity'])) {
+									if (isset($_GET[$key . 'quantity']) && ($_GET[$key . 'quantity'] != $_SESSION['basket'][$key]['quantity'])) {
 										$_SESSION['basket'][$key]['quantity'] = $_GET[$key . 'quantity'];
 										unset($_GET[$key . 'quantity']);
 										header('Location: basket.php');
 									}
-									else if ($_GET[$key . 'up']) {
+									else if (isset($_GET[$key . 'up'])) {
 										$_SESSION['basket'][$key]['quantity']++;
 										header('Location: basket.php');
 									}
-									else if ($_GET[$key . 'down']) {
+									else if (isset($_GET[$key . 'down'])) {
 										$_SESSION['basket'][$key]['quantity']--;
 										header('Location: basket.php');
 									}

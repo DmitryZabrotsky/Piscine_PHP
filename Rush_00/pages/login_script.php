@@ -10,13 +10,15 @@
 			exit("ERROR\n");
 		}
 		$login = $_POST['login'];
+		echo $_POST['passwd'].":logscrp<br>";
 		$password = hash('whirlpool', $_POST['passwd']);
+		echo $password.":logscrp<br>";
 		$loginsession = $_POST['login'];
 	}
 
 	include('auth.php');
-
-	if (auth($login, $password) === TRUE) {
+	
+	if (auth($login, $password)) {
 		session_start();
 		$_SESSION['loggued_on_user'] = $loginsession;
 		header('Location: ../index.php');

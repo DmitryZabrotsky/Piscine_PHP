@@ -1,0 +1,35 @@
+<- Matrix ----------------------------------------------------------------------
+
+A Matrix class operate transformations, such as apply
+a scale change, a translation or a rotation to one or several vertices.
+
+An instance can be constructed like:
+new Matrix( array( 'preset' => Matrix::[preset], [key] => [value]) );
+
+Presets:
+
+-	IDENTITY
+-	SCALE
+-	RX
+-	RY
+-	RZ
+-	TRANSLATION
+-	PROJECTION
+
+The keys are :
+
+-	preset
+-	scale
+-	angle
+-	vtc
+-	fov
+-	ratio
+-	near
+-	far
+
+Methods:
+
+mult(Matrix $rhs); mult matrixes;
+transformVertex(Vertex $vtx);
+
+---------------------------------------------------------------------- Matrix ->

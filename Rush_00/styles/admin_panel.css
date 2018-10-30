@@ -1,0 +1,36 @@
+html, body {
+	/*background-color: lightgrey;*/
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.adm_info_block_header {
+	text-align: center;
+}
+
+.adm_info {
+	margin: 0 auto;
+	width: 90%;
+}
+
+.adm_info_block {
+	margin: 0 auto;
+	border: solid 2px #7c9f45;
+	padding: 2vh;
+
+}
+
+.navigation-menu, .pre-navigation-img {
+	display: none;
+}
+
+.back-to-main {
+	color: black;
+	width: 100%;
+	text-align: center;
+	font-size: 2em;
+	font-weight: 600;
+	text-decoration: none; 
+}

@@ -1,0 +1,16 @@
+<- Camera ----------------------------------------------------------------------
+
+Camaera class provide us to be able
+to "see" our scenes.
+
+Usage:
+
+new Camera( array( 'origin' => $vtxO,
+						   'orientation' => $R,
+						   'width' => 640,
+						   'height' => 480,
+						   'fov' => 60,
+						   'near' => 1.0,
+						   'far' => 100.0) );
+
+---------------------------------------------------------------------- Camera ->

@@ -63,10 +63,10 @@ body {
     height: 35vw;
 }
 .navigation-menu {
+	text-align: center;
 	width: 100%;
     height: 5vw;
     margin-top: 1vw;
-    text-align: center;
 }
 
 .navigation-menu > a {
@@ -76,17 +76,17 @@ body {
 }
 .afterline-navigation-menu {
 	height: 1vw;
-	background-color: black;
+	background-color: #7c9f45;
 }
 .menu-item {
 	padding: 2vw;
 }
 .menu-item:hover {
-    background-color: #126e9a;
+    background-color: #7c9f45;
     color: white;
 }
 .footer {
-	color: orange;
+	color: black;
 	vertical-align: middle;
 	text-align: center;
 	margin-top: 3vw;

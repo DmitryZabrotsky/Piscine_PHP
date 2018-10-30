@@ -1,15 +1,11 @@
 <?php
+	include('db.php');
 	$is_basket = TRUE;
 
-	$cont = file_get_contents('access_db_info.csv');
-	if (!$cont) {
-		header('Location: intro.php?msqlogin=root&msqpasswd=rotten');
-	}
-
-	$cont = explode(';', $cont);
-	
-
-	if (!($conn = mysqli_connect("localhost", $cont[0], $cont[1], $cont[2]))) {
+	if (!file_exists('db.php')) {
+		header('Location: intro.php?msqlogin=root&msqpasswd=password');
+	}	
+	if (!($conn = mysqli_connect("localhost", $dbuser, $dbpass, $dbname))) {
 		echo "ERROR\n";
 		die("Connection failed: " . mysqli_connect_error());
 	}
@@ -23,7 +19,32 @@
 		mysqli_free_result($result);
 	}
 
+	function countGoods()
+	{
+		$products = array();
+	if ($cat = isset($_REQUEST['cat'])) {
+		$cat = (int) $_REQUEST['cat'];
+	}
+	else {
+		$cat = 0;
+	}
 
+	$sql = "SELECT p.* FROM products AS p ";
+	if ($cat) {
+		$sql .= ' INNER JOIN categories_products AS cp ON cp.id_product=p.id AND cp.id_category=' . $cat;
+	}
+
+	if ($result = mysqli_query($GLOBALS['conn'], $sql)) {
+		while ($tmp = mysqli_fetch_assoc($result)) {
+			$products[] = $tmp;
+		}
+		mysqli_free_result($result);
+	}
+	return count($products);
+
+	}
+
+	function getGoods($offset, $limit){
 	$products = array();
 
 	if ($cat = isset($_REQUEST['cat'])) {
@@ -33,15 +54,21 @@
 		$cat = 0;
 	}
 
-	$sql = 'SELECT p.* FROM products AS p ';
+	$sql = "SELECT p.* FROM products AS p ";
 	if ($cat) {
-		$sql .= ' INNER JOIN categories_products AS cp ON cp.id_product=p.id AND cp.id_category=' . $cat;
+		$sql .= ' INNER JOIN categories_products AS cp ON cp.id_product=p.id AND cp.id_category=' . $cat. " LIMIT $limit OFFSET $offset";
 	}
-	if ($result = mysqli_query($conn, $sql)) {
+	else{
+		$sql .= "LIMIT $limit OFFSET $offset";
+	}
+
+	if ($result = mysqli_query($GLOBALS['conn'], $sql)) {
 		while ($tmp = mysqli_fetch_assoc($result)) {
 			$products[] = $tmp;
 		}
 		mysqli_free_result($result);
+	}
+	return $products;
 	}
 
 	$users = array();
@@ -51,7 +78,7 @@
 		}
 		mysqli_free_result($result);
 	}
-	session_start();
+	 session_start();
 	if (!$_SESSION['basket']) {
 		$_SESSION['basket'] = array();
 	}
